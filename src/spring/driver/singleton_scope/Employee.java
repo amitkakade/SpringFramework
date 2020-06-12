@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spring.beans;
+package spring.driver.singleton_scope;
 
 /**
  *
@@ -14,6 +14,10 @@ public class Employee {
     private String name = "Default Name";
     private int id = 0;
 
+    Employee(){
+        System.out.println("Created Employee ...");
+    }
+    
     /**
      * @return the name
      */
