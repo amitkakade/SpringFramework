@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <!--Introduction to constructor based dependency injection-->
+    <bean id= "employee_name" class = "spring.driver.dependency_injection.constructor.Employee" scope="singleton" >
+        <constructor-arg value ="Amit"/>
+    </bean>
+    
+    <bean id= "employee_id" class = "spring.driver.dependency_injection.constructor.Employee" scope="singleton" >
+        <constructor-arg value = "21" type="int"/> 
+    </bean>
+    
+    <!--Follow order other wise you will get error or if you don't want to follow order the use attribute 'type'-->
+    <bean id= "employee" class = "spring.driver.dependency_injection.constructor.Employee" scope="prototype" >
+        <constructor-arg value = "1" type = "int"/>
+        <constructor-arg value = "Amit Kakade"/>
+        <constructor-arg value = "male"/>
+    </bean>
+    
+    <!--Follow order other wise you will get error or if you don't want to follow order the use attribute 'index'-->
+    <bean id= "employee_index" class = "spring.driver.dependency_injection.constructor.Employee" scope="prototype" >
+        <constructor-arg value = "1" index = "1"/>
+        <constructor-arg value = "Amit Kakade" index = "2"/>
+        <constructor-arg value = "male" index = "0"/>
+    </bean>
+    
+</beans>
