@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <!--Introduction to setter based dependency injection with secondary data type-->
+    <bean id= "employee" class = "spring.driver.dependency_injection.secondary_type.Employee" scope="prototype" >
+        <property name="gender" value="male"/>
+        <property name="name" value="amit"/>
+        <property name="id" value="21"/>
+        <property name="emp_type" ref="employee_type"/>
+    </bean>
+    
+    <bean id = "employee_type" class = "spring.driver.dependency_injection.secondary_type.EmployeeType">
+        <property name="emp_type" value="Manager"/>   
+    </bean>
+    
+    <!--By using inner-bean approach-->
+    <bean id= "employee_innerbean" class = "spring.driver.dependency_injection.secondary_type.Employee" scope="prototype" >
+        <property name="gender" value="male"/>
+        <property name="name" value="Mahesh"/>
+        <property name="id" value="51"/>
+        <property name="emp_type">
+            <bean class = "spring.driver.dependency_injection.secondary_type.EmployeeType">
+                <property name="emp_type" value = "Plaform Developer"/>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>
