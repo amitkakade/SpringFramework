@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <bean class="spring.driver.dependency_injection.collection_xsd.vector.Company" id = "company" >
+    
+        <property name="company_names">
+            <util:list list-class="java.util.Vector">
+                <value>Amit Kakade</value>
+                <value>Kshitij Ghonge</value>
+                <value>Pawan Suradkar</value>
+                <value>Ajinkya Dahale</value>
+            </util:list>
+        </property>
+
+    </bean>
+    
+</beans>

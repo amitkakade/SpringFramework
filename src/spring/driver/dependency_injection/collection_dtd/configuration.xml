@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>  
+    
+    <bean class="spring.driver.dependency_injection.collection_dtd.Company" id = "company" >
+    
+        <property name="company_names">
+            <list>
+                <value>Amit Kakade</value>
+                <value>Kshitij Ghonge</value>
+                <value>Pawan Suradkar</value>
+                <value>Ajinkya Dahale</value>
+            </list>
+        </property>
+
+        <property name="top_employees">
+            <set>
+                <value>Amit Kakade</value>
+                <value>Kshitij Ghonge</value>
+            </set>
+        </property>
+
+        <property name="company_employee">
+            <map>
+                <entry key="Deskera" value="Amit Kakade"/>
+                <entry key="Principal" value="Kshitij Ghonge"/>
+                <entry key="Accenture" value="Bharat"/>
+            </map>
+        </property>
+
+    </bean>
+    
+</beans>
