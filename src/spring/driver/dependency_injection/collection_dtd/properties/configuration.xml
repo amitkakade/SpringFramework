@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans> 
+    
+    <bean class="spring.driver.dependency_injection.collection_dtd.properties.Drivers" id="drivers">
+        <property name="properties">
+            <props>
+                <prop key="driver_name">oracle.jdbc.odbc.OracleDriver</prop>
+                <prop key="driver_url">www.dummy.com</prop>
+                <prop key="driver_username">admin</prop>
+                <prop key="driver_password">****</prop>
+            </props>
+        </property>
+    </bean>
+    
+</beans>

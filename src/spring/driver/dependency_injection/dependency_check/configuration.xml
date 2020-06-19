@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<!-- Dependency check concept is depricated from spring 3.0 onwards. Therefore we can use it's alternative @Required annotation in bean class -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    
+    <!--Introduction to setter based dependency injection with secondary data type-->
+    <bean id= "employee" class = "spring.driver.dependency_injection.dependency_check.Employee" scope="prototype">
+        <property name="gender" value="male"/>
+        <property name="id" value="21"/>
+        <!--Uncomment this line to remove error "Properties 'emp_type' and 'name' are required for bean 'employee'" -->
+        <!--<property name="name" value="amit"/>--> 
+        <!--<property name="emp_type" ref="employee_type"/>-->
+    </bean>
+    
+    <bean id = "employee_type" class = "spring.driver.dependency_injection.dependency_check.EmployeeType">
+        <property name="emp_type" value="Manager"/>   
+    </bean>
+    
+</beans>
