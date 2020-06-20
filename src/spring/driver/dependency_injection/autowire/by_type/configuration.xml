@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    
+    <bean class="spring.driver.dependency_injection.autowire.by_type.Employee" id="employee" autowire="byType"></bean>    
+
+    <bean class="spring.driver.dependency_injection.autowire.by_type.Company" id = "company">
+        <property name = "name" value="Deskera"/>
+    </bean>
+    
+    <!--here we have to use autowire-candidate = false because of which this bean is not applicable for DI-->
+    <bean class="spring.driver.dependency_injection.autowire.by_type.Company" id = "company_old" autowire-candidate="false">
+        <property name = "name" value="Krawler"/>
+    </bean>
+    
+</beans>

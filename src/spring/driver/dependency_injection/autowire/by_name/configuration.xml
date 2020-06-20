@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    
+    <bean class="spring.driver.dependency_injection.autowire.by_name.Employee" id="employee" autowire="byName"></bean>    
+    <!--id of the following bean must be similar to the name of variable in Employee class-->
+    <bean class="spring.driver.dependency_injection.autowire.by_name.Company" id = "company">
+        <property name = "name" value="Deskera"/>
+    </bean>
+    <!--Although following is also the bean entry for Company but IOC still refer to the bean with id = company for dependency injection because of byName-->
+    <bean class="spring.driver.dependency_injection.autowire.by_name.Company" id = "company_old">
+        <property name = "name" value="Krawler"/>
+    </bean>
+    
+</beans>
