@@ -6,7 +6,6 @@ and open the template in the editor.
 -->
 
 
-<!-- Dependency check concept is depricated from spring 3.0 onwards. Therefore we can use it's alternative @Required annotation in bean class -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -19,6 +18,7 @@ and open the template in the editor.
     <bean id= "employee" class = "spring.driver.dependency_injection.dependency_check.Employee" scope="prototype">
         <property name="gender" value="male"/>
         <property name="id" value="21"/>
+        <!-- Dependency check concept is depricated from spring 3.0 onwards. Therefore we can use it's alternative @Required annotation in bean class -->
         <!--Uncomment this line to remove error "Properties 'emp_type' and 'name' are required for bean 'employee'" -->
         <!--<property name="name" value="amit"/>--> 
         <!--<property name="emp_type" ref="employee_type"/>-->
