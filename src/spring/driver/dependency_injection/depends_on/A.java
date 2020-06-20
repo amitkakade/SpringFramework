@@ -26,4 +26,5 @@ public class A {
     public void setB(B b) {
         this.b = b;
     }
+    
 }
