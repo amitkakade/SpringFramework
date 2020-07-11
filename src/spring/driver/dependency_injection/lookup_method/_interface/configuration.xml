@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"> 
+    
+    <bean id="car" class = "spring.driver.dependency_injection.lookup_method._interface.Car" >
+        <lookup-method name="getCarEngine" bean="engine"/>
+    </bean>
+    
+    <bean id="engine" class="spring.driver.dependency_injection.lookup_method._interface.Engine">
+        <property name="name" value="Jagwar Engine"/>
+    </bean>
+    
+    
+</beans>
