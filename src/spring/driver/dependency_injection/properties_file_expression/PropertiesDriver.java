@@ -5,10 +5,8 @@
  */
 package spring.driver.dependency_injection.properties_file_expression;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -17,10 +15,11 @@ import org.springframework.core.io.Resource;
 public class PropertiesDriver {
 
     public static void main(String[] args) {
-        Resource resource = new ClassPathResource("/spring/driver/dependency_injection/properties_file_expression/configuration.xml");
-        BeanFactory bf = new XmlBeanFactory(resource);
-        Drivers d = (Drivers) bf.getBean("drivers");
+        
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("/spring/driver/dependency_injection/properties_file_expression/configuration.xml");
+        Drivers d = (Drivers) context.getBean("drivers");
         System.out.println(d);
+        
     }
     
 }
