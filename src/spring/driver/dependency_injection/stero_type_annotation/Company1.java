@@ -5,14 +5,16 @@
  */
 package spring.driver.dependency_injection.stero_type_annotation;
 
+import javax.persistence.Entity;
 import org.springframework.stereotype.Component;
+
 
 /**
  *
  * @author amit
  */
 @Component
-public class Company {
+public class Company1 {
     
     private String name = "Deskera";
 

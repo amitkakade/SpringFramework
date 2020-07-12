@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spring.driver.dependency_injection.stero_type_annotation;
+package spring.driver.dependency_injection.jdk_annotation.inject;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,14 +12,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author amit
  */
-public class DriverSteroType {
-
+public class DriverInjectAnnotation {
     public static void main(String[] args) {
-        
-        ApplicationContext context = new ClassPathXmlApplicationContext("/spring/driver/dependency_injection/stero_type_annotation/configuration.xml");
-        Employee1 employee = (Employee1) context.getBean(Employee1.class);
-        System.out.println(employee);        
-        
+        ApplicationContext context = new ClassPathXmlApplicationContext("/spring/driver/dependency_injection/jdk_annotation/inject/configuration.xml");
+        Car c= (Car) context.getBean("car");
+        System.out.println(c.getEngine());
     }
-
 }

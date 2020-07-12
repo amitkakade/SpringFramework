@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package spring.driver.dependency_injection.stero_type_annotation;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+package spring.driver.dependency_injection.jdk_annotation.resource;
 
 /**
  *
  * @author amit
  */
-public class Employee {
+public class Engine {
 
     private String name;
-    @Autowired
-    private Company company;
 
     /**
      * @param name the name to set
@@ -27,7 +22,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee Name: "+this.name+" | Company Name: "+this.company.getName();
+        return "Engine Name: " + this.name;
     }
-    
+
 }

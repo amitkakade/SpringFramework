@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">  
+    
+    
+    
+    <!-- For this you will require Cgilib jar files to execute this code-->  
+    
+    
+    <bean id ="bank" class="spring.driver.replace_method_tag.Bank">
+        <property name="withdraw" value="100000"/>
+        <property name="deposit" value="10000000"/>
+        <property name="balance" value="100000000"/>
+    </bean>
+    
+    <bean id ="bank_replace_method" class="spring.driver.replace_method_tag.Bank">
+        <property name="withdraw" value="100000"/>
+        <property name="deposit" value="10000000"/>
+        <property name="balance" value="100000000"/>
+        <replaced-method name="balance" replacer="bankimplement"/>
+    </bean>
+    
+    <bean id="bankimplement" class="spring.driver.replace_method_tag.BankImplement">
+        <property name="balance" value="900000000"/>
+    </bean>
+    
+</beans>
